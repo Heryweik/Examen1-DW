@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="header">
+    <div class="navbar">
+      <div style="display: flex; gap: 1rem; align-items: center">
+        <a [routerLink]="['/chats/' + userId]">
+          <i
+            class="fa-solid fa-chevron-left"
+            style="font-size: 25px; font-weight: bold; color: white"
+          ></i>
+        </a>
+        <div class="user">
+          <div class="img">{{nombreDestinatario.charAt(0)}}</div>
+          <h5>{{nombreDestinatario}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- <div *ngFor="let t of conversacion.mensajes"> -->
+      <div class="chats"   *ngFor="let mensaje of conversacion">
+        <div class="inUsuario"  >
+          <div style="display: flex; gap: 1rem">
+            <div class="imagePerfil" *ngIf="mensaje.emisor !== userId">
+              {{nombreDestinatario.charAt(0)}}
+              <div class="estatus"></div>
+            </div>
+            <div class="mensajes">
+              <div class="info" *ngIf="mensaje.emisor !== userId">
+                {{ mensaje.mensaje }}
+              </div>
+            </div>
+          </div>
+
+          <div class="mensajesE">
+            <div class="info enviado ms-auto" *ngIf="mensaje.emisor === userId">
+              {{ mensaje.mensaje }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+
+  <app-mensaje style="width: 100%;" [idConver]="idConversacion"></app-mensaje>
+</div>

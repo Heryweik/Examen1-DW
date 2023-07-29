@@ -1,0 +1,55 @@
+:root {
+    --fondo: #000000;
+    --input: #2B2B2D;
+    --colorTeams: #5B5FC0;
+    --letras: #F2F2FA;
+    --letrasOscuras: #C1C1C1;
+    --fondoinputs: #2B2B2D;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000000;
+
+    img {
+        width: 60%;
+        margin-top: -120px;
+    }
+
+    .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 2rem;
+        width: 100%;
+        color: #C1C1C1;
+
+        input {
+            border-radius: 20px;
+            border: 1px solid #7f7f7f;
+            background-color: #2B2B2D;
+            color: #F2F2FA;
+            width: 65%;
+            height: 2.5rem;
+            padding-left: 20px;
+        }
+    }
+
+    .login {
+        background-color: #5B5FC0;
+        color: #F2F2FA;
+        width: 65%;
+        border-radius: 20px;
+        height: 2.5rem;
+        border: none;
+        font-weight: bold;
+    }
+}

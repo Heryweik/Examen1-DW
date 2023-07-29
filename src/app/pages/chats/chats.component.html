@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="header">
+    <div class="navbar">
+      <div class="user">
+        <div class="img"><img [src]="usuario.imagen" alt="" class="im"/></div>
+        <h5>{{ usuario.nombre }}</h5>
+      </div>
+      <div class="cuenta">
+        <button
+          style="border: none; background-color: transparent"
+          data-bs-toggle="modal"
+          data-bs-target="#salir"
+        >
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </div>
+    </div>
+
+    <input type="text" placeholder="Search" />
+  </div>
+
+  <div class="body">
+    <div *ngFor="let conversacion of usuario.conversaciones">
+      <ng-container
+        *ngIf="conversacion.tipo === 'grupal'; else mostrarPrimeraLetra"
+      >
+        <div class="chats" [routerLink]="['/chatGrupal/' + conversacion.idConversacion, { nombreDestinatario: conversacion.nombreDestinatario, idGrupo: conversacion.idGrupo}]">
+          <div class="inUsuario">
+            <div class="imagePerfilT">
+              <i class="fa-solid fa-user-group icon"></i>
+            </div>
+
+            <div class="info">
+              <h5>{{ conversacion.nombreDestinatario }}</h5>
+              <span class="in">{{ conversacion.ultimoMensaje }}</span>
+            </div>
+          </div>
+          <div class="hora">
+            <span class="ho">{{ conversacion.horaUltimoMensaje }}</span>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-template #mostrarPrimeraLetra>
+
+        <div class="chats" [routerLink]="['/chatIndividual/' + conversacion.idConversacion, { nombreDestinatario: conversacion.nombreDestinatario }]">
+            <div class="inUsuario">
+                <div class="imagePerfil">
+                    {{ conversacion.nombreDestinatario.charAt(0) }}
+                    <div class="estatus"></div>
+                  </div>
+  
+              <div class="info">
+                <h5>{{ conversacion.nombreDestinatario }}</h5>
+                <span class="in">{{ conversacion.ultimoMensaje }}</span>
+              </div>
+            </div>
+            <div class="hora">
+              <span class="ho">{{ conversacion.horaUltimoMensaje }}</span>
+            </div>
+          </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="c1" style="color: #5b5fc0">
+      <i class="fa-solid fa-comment-dots icon"></i>
+      <span class="foo">Chat</span>
+    </div>
+    <div class="c1" [routerLink]="['/teams/']">
+      <i class="fa-solid fa-user-group icon"></i>
+      <span class="foo">Teams</span>
+    </div>
+    <div class="c1" [routerLink]="['/calls/']">
+      <i class="fa-solid fa-phone icon"></i>
+      <span class="foo">Calls</span>
+    </div>
+    <div class="c1">
+      <i class="fa-solid fa-ellipsis icon"></i>
+      <span class="foo">More</span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="salir"
+  tabindex="-1"
+  aria-labelledby="salirLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="salirLabel">Desea salir?</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          data-bs-dismiss="modal"
+          class="btn btn-primary"
+          [routerLink]="['']"
+        >
+          salir
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

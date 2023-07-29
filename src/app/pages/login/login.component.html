@@ -1,0 +1,11 @@
+<div class="container">
+    <img src="../../../assets/logo.png" alt="">
+    <div class="inputs">
+        
+        <input type="text" placeholder="User" [(ngModel)]="usuario.usuario" required >
+        <input type="password" placeholder="Password" [(ngModel)]="usuario.contrasena" required >
+    </div>
+    <button class="login" (click)="loginUsuario()"> <!-- [routerLink]="['/chats/' + usuario.id]" -->
+        Login
+    </button>
+</div>

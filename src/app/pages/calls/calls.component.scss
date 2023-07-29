@@ -1,0 +1,192 @@
+:root {
+    --fondo: #000000;
+    --input: #2B2B2D;
+    --colorTeams: #5B5FC0;
+    --letras: #F2F2FA;
+    --letrasOscuras: #898989;
+    --fondoinputs: #2B2B2D;
+    --usuarioSinImagen: #EDD6CE;
+    --letrasUsuario: #612A1A;
+    --footer: #141414;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000000;
+
+    .header {
+        width: 100%;
+        padding: 10px;
+        color: #F2F2FA;
+        margin-bottom: 1rem;
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1.5rem;
+
+                .img{
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    background-color: #5B5FC0;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+
+                    .im{
+                        max-width: 100%; 
+                        height: auto;
+                    }
+                    
+                }
+            }
+
+            .cuenta {
+                background-color: #F2F2FA;
+                width: 1.5rem;
+                height: 1.5rem;
+                color: #000000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+        }
+
+        input {
+            border-radius: 15px;
+            border: none;
+            background-color: #2B2B2D;
+            color: #F2F2FA;
+            width: 100%;
+            height: 2.5rem;
+            padding-left: 20px;
+        }
+    }
+
+    .body {
+        padding: 0%;
+        min-height: calc(100vh - 12.75rem);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .chats{ 
+            display: flex;
+            color: #F2F2FA;
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            .inUsuario {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .imagePerfil {
+                    width: 5rem;
+                    height: 5rem;
+                    background-color: #EDD6CE;
+                    color: #612A1A;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    font-size: 25px;
+                    font-weight: bold;
+
+                    .estatus {
+                        position: absolute;
+                        width: .65rem;
+                        height: .65rem;
+                        border-radius: 50%;
+                        background-color: rgb(135, 217, 12);
+                        bottom: 8px;
+                        right: 6px;
+                    }
+
+                    .estatusR {
+                        background-color: red;
+                    }
+
+                    .estatusY {
+                        background-color: yellow;
+                    }
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+
+                    .in {
+                        color: #898989;
+                    }
+                }
+            }
+
+            .hora {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: small;
+                color: #898989;
+
+                .i {
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    background-color: #898989;
+                    color: #000000;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: auto;
+                    border-radius: 50%;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+
+    .footer {
+        height: 4.5rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    
+        .c1 {
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #F2F2FA;
+            gap: 3px;
+
+            .icon {
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+
+            .foo {
+                font-size: 10px;
+            }
+        }
+    }
+    
+}
