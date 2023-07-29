@@ -33,11 +33,12 @@
           </div>
 
           <div class="mensajesE">
-            <div class="info enviado ms-auto" *ngIf="mensaje.emisor === userId">
+            <div class="info enviado" *ngIf="mensaje.emisor === userId">
               {{ mensaje.mensaje }}
             </div>
           </div>
 
+          <div id="scrollToBottom"></div>
         </div>
       </div>
     <!-- </div> -->

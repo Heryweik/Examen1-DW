@@ -54,5 +54,7 @@ export class ChatIndividualComponent {
       console.error("Error en la solicitud de obtener la conversación:", error);
     }
   }
+
+
 }
 

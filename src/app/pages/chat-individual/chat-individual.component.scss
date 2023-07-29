@@ -74,23 +74,25 @@
         min-height: calc(100vh - 8.95rem);
         width: 100%;
         display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
         flex-direction: column;
         overflow: scroll;
 
         .chats{ 
             display: flex;
             color: #F2F2FA;
-            margin: 1rem;
+            margin: .4rem;
             display: flex;
-            align-items: center;
+            align-items: center;justify-content: flex-end; /* Gracias a esto los mensajes aparecen abajo pero no hay scroll, en mensajes grupales lo dejare sin esto */
             justify-content: space-between;
             position: relative;
 
             .inUsuario {
                 display: flex;
-                align-items: center;
+                align-items: flex-end;
                 flex-direction: column;
-                gap: 1rem;
+                gap: .1rem;
 
                 .imagePerfil {
                     width: 2rem;
@@ -127,7 +129,7 @@
                 .mensajes {
                     display: flex;
                     flex-direction: column;
-                    gap: 1rem;
+                    gap: .1rem;
                     width: 90%;
 
                     .info {
@@ -148,9 +150,10 @@
 
                 .mensajesE {
                     display: flex;
+                    align-items: flex-end;
                     flex-direction: column;
-                    gap: 1rem;
-                    width: 100%;
+                    gap: .1rem;
+                    width: 23.5rem;
 
                     .info {
                         display: flex;
@@ -165,6 +168,7 @@
 
                     .enviado {
                         background-color: #5B5FC0;
+                        display: flex; 
                     }
                 }
             }
